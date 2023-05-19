@@ -7,9 +7,9 @@ type CheckoutTrainsController struct {
 }
 
 func NewCheckoutHotelController() CheckoutHotelController {
-
+	return CheckoutHotelController{}
 }
 
 func NewCheckoutTrainsController() CheckoutTrainsController {
-
+	return CheckoutTrainsController{}
 }

@@ -1,10 +1,5 @@
 package controllers
 
-import (
-	"github.com/labstack/echo/v4"
-	""
-)
-
 type OrderTrainsController struct {
 }
 
@@ -12,9 +7,9 @@ type OrderHotelsController struct {
 }
 
 func NewOrderTrainsController() OrderTrainsController {
-
+	return OrderTrainsController{}
 }
 
 func NewOrderHotelsController() OrderHotelsController {
-
+	return OrderHotelsController{}
 }

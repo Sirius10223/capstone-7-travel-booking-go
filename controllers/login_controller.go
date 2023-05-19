@@ -11,9 +11,9 @@ type UserController struct {
 }
 
 func NewUserController() UserController {
-
+	return UserController{}
 }
 
 func (us UserController) Login(c echo.Context) error {
-
+	return nil
 }

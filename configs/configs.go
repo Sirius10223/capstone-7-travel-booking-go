@@ -1,27 +1,44 @@
 package configs
 
-import {
+import (
 	"Capstone_Project/models"
-	"fmt"
+	"os"
 
-	"github.com/jinzhu/gorm"
+	_ "github.com/jackc/pgx/v5/stdlib"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-}	
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
+)
 
-var 
+var db *gorm.DB
 
-func init() {
-	
-}
 
 type Config struct {
 	
 }
 
-func InitDB() {
+func InitDB() error {
+	// connect using gorm pgx
+	conn, err := gorm.Open(postgres.New(postgres.Config{
+		DSN:        os.Getenv("DATABASE_URL"),
+		DriverName: "pgx",
+	}), &gorm.Config{})
+	if err != nil {
+		return err
+	}
 
+	conn.AutoMigrate(models.User{},models.Histories{})
+	SetupDBConnection(conn)
+	return nil
 }
 
-func InitialMigration() {
-	
+// store in a new var
+func SetupDBConnection(DB *gorm.DB) {
+	db = DB
 }
+
+// get db obj
+func GetDBConnection() *gorm.DB {
+	return db
+}
+

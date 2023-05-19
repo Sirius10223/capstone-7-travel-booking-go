@@ -1,8 +1,6 @@
 package repositories
 
-import {
-	""
-}
+import ()
 
 type OrderRepository interface {
 
@@ -13,5 +11,5 @@ type orderRepository struct {
 }
 
 func NewOrderRepository () orderRepository {
-
+	return orderRepository{}
 }

@@ -1,6 +1,6 @@
 package middlewares
 
-var db = config.DB
+// var db = config.DB
 
 func BasicAutoDB() {
 

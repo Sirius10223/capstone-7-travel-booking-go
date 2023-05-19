@@ -1,10 +1,10 @@
 package middlewares
 
 import (
-	jwt "github.com/dgrijalva/jwt-go"
+	// jwt "github.com/dgrijalva/jwt-go"
 )
 
 func CreateToken() {
-	claims := jwt.MapClaims{}
+	// claims := jwt.MapClaims{}
 
 }
